@@ -1,0 +1,53 @@
+<!-- Save as: about.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Meet Chopra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page container">
+    <header class="top">
+      <nav class="nav">
+        <div class="brand">
+          <div class="logo">MC</div>
+          <div class="name">Meet Chopra</div>
+        </div>
+        <ul class="navlinks">
+          <li><a href="index.html">About</a></li>
+          <li><a href="projects.html">My work</a></li>
+          <li><a href="blog.html">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <h1>About</h1>
+        <p class="muted">Short bio</p>
+        <p>I am a BCA student passionate about building fast, maintainable websites and small apps. I enjoy working on front-end UI, learning systems-level programming in C, and exploring AI basics. Looking for internships and small freelance projects.</p>
+
+        <h3>Skills & tools</h3>
+        <p class="tech-list"><span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>React</span> <span>Node.js</span> <span>C</span> <span>Git</span></p>
+      </section>
+
+      <aside class="right card">
+        <img class="avatar" src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=MeetChopra" alt="Avatar">
+        <div class="meta">
+          <strong>Meet Chopra</strong>
+          <div class="muted">BCA Student · Web Dev Learner</div>
+          <div class="links"><a href="https://github.com/meetchopra_me" target="_blank">GitHub</a></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="foot muted">© <span id="year2"></span> Meet Chopra</footer>
+  </div>
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

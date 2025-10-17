@@ -1,0 +1,54 @@
+<!-- Save as: contact.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Meet Chopra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page container">
+    <header class="top">
+      <nav class="nav">
+        <div class="brand">
+          <div class="logo">MC</div>
+          <div class="name">Meet Chopra</div>
+        </div>
+        <ul class="navlinks">
+          <li><a href="index.html">About</a></li>
+          <li><a href="projects.html">My work</a></li>
+          <li><a href="blog.html">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <h1>Contact</h1>
+        <p class="muted">Send me a message or email directly.</p>
+        <form onsubmit="handleContact(event)">
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <textarea id="message" rows="6" placeholder="Message" required></textarea>
+          <div style="margin-top:10px"><button class="btn" type="submit">Send</button></div>
+        </form>
+      </section>
+
+      <aside class="right card">
+        <div class="meta">
+          <strong>Mail</strong>
+          <div style="margin-top:8px"><a href="mailto:meetchopra@example.com" class="muted">meetchopra@example.com</a></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="foot muted">© <span id="year5"></span> Meet Chopra</footer>
+  </div>
+  <script>
+    document.getElementById('year5').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

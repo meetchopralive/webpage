@@ -1,0 +1,62 @@
+<!-- Save as: projects.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My work — Meet Chopra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page container">
+    <header class="top">
+      <nav class="nav">
+        <div class="brand">
+          <div class="logo">MC</div>
+          <div class="name">Meet Chopra</div>
+        </div>
+        <ul class="navlinks">
+          <li><a href="index.html">About</a></li>
+          <li><a href="projects.html">My work</a></li>
+          <li><a href="blog.html">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <h1>Selected work</h1>
+        <article class="work">
+          <h3>Calculator — C + HTML UI</h3>
+          <p class="muted">C-based calculation engine with a small web front-end (concept).</p>
+        </article>
+
+        <article class="work">
+          <h3>To-do App — JavaScript</h3>
+          <p class="muted">LocalStorage, simple UI state management.</p>
+        </article>
+
+        <article class="work">
+          <h3>Portfolio — HTML/CSS/JS</h3>
+          <p class="muted">This portfolio site. Minimal, fast, and easy to host on GitHub Pages.</p>
+        </article>
+
+      </section>
+
+      <aside class="right card">
+        <img class="avatar" src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=MeetChopra" alt="Avatar">
+        <div class="meta">
+          <strong>Meet Chopra</strong>
+          <div class="muted">BCA Student · Web Dev Learner</div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="foot muted">© <span id="year3"></span> Meet Chopra</footer>
+  </div>
+  <script>
+    document.getElementById('year3').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
