@@ -56,9 +56,10 @@ body{
 .right{display:flex;flex-direction:column;gap:14px}
 .avatar{width:96px;height:96px;border-radius:14px;object-fit:cover;border:1px solid rgba(255,255,255,0.04)}
 .meta{line-height:1}
-.meta strong{display:block}
+.meta strong{display:block;margin-bottom:8px}
 .meta .links a{display:inline-block;margin-right:8px;color:var(--muted);text-decoration:none;padding:6px;border-radius:8px}
 .meta .links a:hover{color:var(--white);background:rgba(30,144,255,0.04)}
+.meta .muted{margin-bottom:12px}
 
 /* Experience & lists */
 .exper-list, .projects ul, .posts ul{list-style:none;padding:0;margin:8px 0}
