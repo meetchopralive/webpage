@@ -1,0 +1,103 @@
+<!--
+title: Why portfolios get copied
+date: 2025-08-08
+author: Meet Chopra
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why portfolios get copied — Meet Chopra</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="page container">
+        <header class="top">
+            <nav class="nav">
+                <div class="brand">
+                    <div class="logo">M</div>
+                    <div class="name">Meet Chopra</div>
+                </div>
+                <ul class="navlinks">
+                    <li><a href="../index.html">About</a></li>
+                    <li><a href="../projects.html">My work</a></li>
+                    <li><a href="../blog.html">Posts</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content" style="display: flex; flex-direction: column; align-items: flex-start; padding: 0 2rem;">
+            <!-- Left-aligned content wrapper -->
+            <div style="width: 100%; max-width: 900px;">
+                <!-- Back to Posts button -->
+                <div class="post-nav" style="margin-bottom: 1rem;">
+                    <a href="../blog.html" class="btn ghost">← Back to Posts</a>
+                </div>
+
+                <article class="card" style="width: 100%; padding: 2rem;">
+                    <h1>Why portfolios get copied</h1>
+                    <div class="meta muted">— Aug 8, 2025</div>
+                
+                <div class="post-content">
+                    <!-- Your post content here -->
+                    <p>Write your blog post content here. You can use HTML formatting like:</p>
+                    <ul>
+                        <li>Lists</li>
+                        <li>Links <a href="#">like this</a></li>
+                        <li>And other HTML elements</li>
+                    </ul>
+                    
+                    <h2>Sections</h2>
+                    <p>Use h2, h3 etc. for sections in your post.</p>
+                </div>
+
+                <!-- Post navigation -->
+                <div class="post-nav" style="margin-top: 2rem; display: flex; justify-content: space-between; gap: 1rem;">
+                    <a href="#" class="btn ghost prev-post" style="display: none;">← Previous Post</a>
+                    <a href="#" class="btn ghost next-post" style="display: none;">Next Post →</a>
+                </div>
+            </article>
+        </main>
+
+        <footer class="foot muted">© <span class="year"></span> Meet Chopra</footer>
+    </div>
+    <script>
+        // Update copyright year
+        document.querySelector('.year').textContent = new Date().getFullYear();
+
+        // Post navigation logic
+        (function setupPostNavigation() {
+            const posts = [
+                { url: 'post-1.html', title: 'Why portfolios get copied' },
+                { url: 'post-2.html', title: 'Your Second Post' },
+                { url: 'post-3.html', title: 'Your Third Post' }
+            ];
+
+            // Find current post index
+            const currentPath = window.location.pathname;
+            const currentFileName = currentPath.split('/').pop();
+            const currentIndex = posts.findIndex(p => p.url === currentFileName);
+
+            // Set up previous post link
+            const prevPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
+            const prevLink = document.querySelector('.prev-post');
+            if (prevPost && prevLink) {
+                prevLink.href = prevPost.url;
+                prevLink.title = prevPost.title;
+                prevLink.style.display = 'inline-block';
+            }
+
+            // Set up next post link
+            const nextPost = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
+            const nextLink = document.querySelector('.next-post');
+            if (nextPost && nextLink) {
+                nextLink.href = nextPost.url;
+                nextLink.title = nextPost.title;
+                nextLink.style.display = 'inline-block';
+            }
+        })();
+    </script>
+</body>
+</html>
