@@ -28,7 +28,17 @@
           <li><a href="blog.html">Posts</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button class="menu-btn" aria-label="Toggle mobile menu">☰</button>
       </nav>
+      <div class="mobile-menu">
+        <ul class="navlinks">
+          <li><a href="index.html">About</a></li>
+          <li><a href="projects.html">My work</a></li>
+          <li><a href="blog.html">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="menu-overlay"></div>
     </header>
 
     <main class="content">
@@ -79,9 +89,9 @@
     </main>
 
     <footer class="foot muted">© <span id="year3"></span> Meet Chopra</footer>
+
+
   </div>
-  <script>
-    document.getElementById('year3').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
