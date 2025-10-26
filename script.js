@@ -132,6 +132,58 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   // Load posts if on blog page
   loadAndRenderPosts();
+itleMatch ? titleMatch[1].trim() : 'Untitled Post',
+      date: dateMatch ? dateMatch[1].trim() : ''
+    };
+  }
+
+  async function loadPost(url) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const html = await res.text();
+      return extractPostMeta(html);
+    } catch (err) {
+      console.error('Failed to load post', url, err);
+      return null;
+    }
+  }
+
+  // Load metadata for all posts
+  const loaded = await Promise.all(posts.map(async p => {
+    const meta = await loadPost(p.url);
+    if (!meta) return null;
+    return { ...p, ...meta };
+  }));
+
+  const valid = loaded.filter(Boolean).sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  if (valid.length === 0) {
+    postsList.innerHTML = '<li class="muted">No posts yet.</li>';
+    return;
+  }
+
+  postsList.innerHTML = valid.map(post => `\n    <li>\n      <a href="${post.url}">${post.title}</a>\n      <span class="muted">— ${post.date}</span>\n    </li>`).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Update copyright year
+  const y = new Date().getFullYear();
+  document.querySelectorAll('#year, #year2, #year3, #year4, #year5').forEach(el => { 
+    if(el) el.textContent = y;
+  });
+
+  // Always reset mobile menu state on page load
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.menu-overlay');
+  if (mobileMenu) mobileMenu.classList.remove('active');
+  if (overlay) overlay.classList.remove('active');
+  document.body.style.overflow = '';
+
+  // Initialize mobile menu
+  initMobileMenu();
+  // Load posts if on blog page
+  loadAndRenderPosts();
 });
 
 /* small mailto handler for contact form */
